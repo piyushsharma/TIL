@@ -1,10 +1,9 @@
 # TIL
 Today I learned
 
-Encoding - 
+### Encoding
 
-To encode means to use something to represent something else. An encoding is the set of rules with which to convert something from one representation to another.
-Character Set, Charset - the set of characters that can be encoded in an encoding scheme. 
+To encode means to use something to represent something else. An encoding is the set of rules with which to convert something from one representation to another. Character Set, Charset - the set of characters that can be encoded in an encoding scheme. 
 For eg. ASCII encoding - there are 128 characters in ASCII (all combinations of 7 bits). 
 
 128 characters are too less, one byte is too small (since max possible combinations with one byte = 256)
