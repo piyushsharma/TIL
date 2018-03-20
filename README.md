@@ -17,3 +17,8 @@ If two systems are talking to each other, they always need to specify what encod
 In this day and age, the standard encoding is UTF-8 since it can encode virtually any character of interest, is backwards compatible with the de-facto baseline ASCII and is relatively space efficient for the majority of use cases nonetheless.
 
 The days of one byte = one character are over and both programmers and programs need to catch up on this.
+
+
+
+#### References
+1. http://kunststube.net/encoding/
