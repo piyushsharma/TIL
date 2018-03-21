@@ -18,7 +18,21 @@ In this day and age, the standard encoding is UTF-8 since it can encode virtuall
 
 The days of one byte = one character are over and both programmers and programs need to catch up on this.
 
+### Resource IDs
 
+#### Integers
+Maintaining a serialized number requires consistency... one place that is the keeper of numbers. In large systems this can become a bottleneck, a single point of failure, or both. In distributed systems, it is common to start relaxing this constraint (Consistency) in favor of the other two.
+
+There are strategies to maintain serialized numeric identities in distributed systems, like the HI-LO algorithm or its derivatives, but it is still very possible to skip large swaths of numbers in case of node failures.
+
+#### UUIDs
+Another common method is to use a UUID, a randomly generated identifer (which is twice the size of Int64), which has a pretty high (but not 100%) chance of being unique from any other generated UUID. It's basically just a very large random number. This is nice for client operations, because the client can generate it with a pretty good chance of uniqueness, and subsequently use it to identify or track things. But collisions (same ID being generated) are possible (especially if the client has a terrible RNG) and still must be dealt with.
+
+Most likely youtube identifers are some shorter variation of a uuid which is then converted to a variation of base64 without punctuation. Because punctuation kills the ability to be used in links. Hence, it's a very large number (either random or serialized) that has been converted to text so that it is shorter.
+
+#### Strings
+One identifier format that is fairly popular is "entity-#" or "system-entity-#" if you have a number of inter-operating systems. The # is generated either consistently by the owning system (still distributed in the sense that there are multiple systems, microservices, whatever) or with a HI-LO variation. And for display purposes, it's fairly trivial to strip off the prefix and just use the number portion.
 
 #### References
 1. http://kunststube.net/encoding/
+2. https://softwareengineering.stackexchange.com/questions/301620/why-do-some-prominent-web-sites-use-alphanumeric-strings-for-resource-ids-instea/301641#301641
