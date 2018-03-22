@@ -33,6 +33,19 @@ Most likely youtube identifers are some shorter variation of a uuid which is the
 #### Strings
 One identifier format that is fairly popular is "entity-#" or "system-entity-#" if you have a number of inter-operating systems. The # is generated either consistently by the owning system (still distributed in the sense that there are multiple systems, microservices, whatever) or with a HI-LO variation. And for display purposes, it's fairly trivial to strip off the prefix and just use the number portion.
 
+### Semantic Versioning (SEMVER)
+[ X.Y.Z ] => [6.10.11] 
+1. the first part is the MAJOR number - it is bumped when changes in release would break a previous release 
+(eg. change in user facing API)
+2. the second (middle) part is the MINOR number - it is bumped when there is new functionality added without breaking previuos releases
+3. the last bit is the PATCH number - bumped when no new functionality + maintains backward compatibility (fixing bugs)
+
+
+
+
+
+
+
 #### References
 1. http://kunststube.net/encoding/
 2. https://softwareengineering.stackexchange.com/questions/301620/why-do-some-prominent-web-sites-use-alphanumeric-strings-for-resource-ids-instea/301641#301641
